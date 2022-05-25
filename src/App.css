@@ -65,3 +65,8 @@ a {
     transform: rotate(360deg);
   }
 }
+.friends-list{
+  font-size:1.3rem;
+  margin-top:1rem;
+  
+}

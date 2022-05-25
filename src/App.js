@@ -9,7 +9,7 @@ import axios from 'axios';
 function App() {
   
   const logout=()=>{
-    axios.post("http://localhost:9000/api/logout", {userToken: localStorage.getItem=("token")})
+    axios.post("http://localhost:9000/api/logout", {token: localStorage.getItem=("token")})
     .then(res =>{
       localStorage.removeItem("token");
       // another way to redirect
@@ -39,7 +39,7 @@ function App() {
 
       <Route path="/login" component={Login}/>
       
-      <Route path="/friends" component={FriendsList}/>
+      <Route path="/friendslist" component={FriendsList}/>
       <Route path="/add" component={AddFriend}/>
       <Route exact path="/" component={Login}/>
     </div>

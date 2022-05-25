@@ -9,26 +9,26 @@ const FriendsList = () =>{
         const token = localStorage.getItem("token")
         axios.get("http://localhost:9000/api/friends", {
             headers: {
-                authenticator: token
+                authorization: token
             }
         })
         .then(res =>{
-          setFriends(res.data)
+           setFriends(res.data);
               })
 
         .catch(err => {console.log(err)})
-    }, [])
+    }, []);
 
     
     return (
         <div>
             <h1>FRIENDS LIST</h1>
-            <ul>
-            {friends.map(friend =>{
-                <li>{friend.name}-{friend.age}-{friend.email}</li>
+            
+            {friends.map((friend, idx) =>{
+                return <p className="friends-list" key={idx}>{friend.name} - {friend.age} - {friend.email}</p>
             })}
            
-            </ul>
+            
             
         </div>
     )
